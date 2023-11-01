@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap");
+
+#profile-link {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+}
+
+#account-dropdown, #mode {
+  /* background-color: #11182756; */
+  /* background: rgba(255, 255, 255, 0.25); */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+#notification{
+    /* transform: translate(21px, -8px); */
+    transform: translate(29px, -12px);
+}
