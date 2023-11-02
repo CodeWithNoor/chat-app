@@ -1,7 +1,14 @@
+const hostnames = [
+    'github.com',
+    'lh3.googleusercontent.com']
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['github.com'],
+        remotePatterns: hostnames.map(hostname => ({
+            protocol: 'https',
+            hostname
+        }))
     },
     env: {
         GOOGLE_ID: '211884311297-oasuoff16nl044v5helrd02520egh81b.apps.googleusercontent.com',

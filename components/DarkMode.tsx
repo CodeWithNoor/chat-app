@@ -3,7 +3,7 @@
 import * as React from "react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
-import "./styling/header.css"
+import "./styling/header.css";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -18,13 +18,17 @@ export function DarkModeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="bg-[#000] text-white hover:bg-black hover:text-white dark:bg-[#0000]">
-          <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        <Button size="icon" className="w-9 h-9">
+          <SunIcon className="h-[1rem] w-[1rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <MoonIcon className="absolute h-[1rem] w-[1rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           {/* <span className="sr-only">Toggle theme</span> */}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" id="mode" className="dark:bg-[#11182756]">
+      <DropdownMenuContent
+        align="end"
+        id="mode"
+        className="dark:bg-[#11182756]"
+      >
         <DropdownMenuItem onClick={() => setTheme("light")}>
           Light
         </DropdownMenuItem>

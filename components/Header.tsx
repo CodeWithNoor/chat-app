@@ -20,7 +20,7 @@ const nunito = Nunito({
 
 const Header = async () => {
   const session = await getServerSession();
-  console.log(session);
+  // console.log(session, "session");
 
   return (
     <>
@@ -49,46 +49,36 @@ const Header = async () => {
           </Link>
 
           {/***************** section-2 ************************/}
-          <div className="flex items-center justify-end space-x-2">
+          <div className="flex items-center justify-end">
             {/* chat */}
-            <Button size={"icon"} className="text-2xl">
-              {/* <MdOutlineChat /> */}
-              <BsTranslate />
+            <Button size={"icon"} className="my-1 mx-2" id="icon">
+              <BsTranslate className="text-4xl p-2" />
             </Button>
 
             {/* session if user logged in or not */}
             {session ? (
-              <Button size={"icon"} className="text-2xl">
-                <div
-                  className="bg-[#00ff40] rounded-full w-2 h-2"
-                  id="notification"
-                ></div>
-                <MdOutlineChat />
+              <Button size={"icon"} className="my-1 mx-2" id="icon">
+                <MdOutlineChat className="text-4xl p-2" />
               </Button>
             ) : (
               <Link href={"/pricing"} prefetch={false}>
-                <Button size={"icon"} className="text-2xl">
-                  <div
-                    className="bg-[#ff0000] rounded-full w-[20px] h-[5px]"
-                    id="notification"
-                  ></div>
-                  <PaidIcon className="text-4xl" />
+                <Button size={"icon"} className="my-1 mx-2" id="icon">
+                  <PaidIcon className="text-4xl p-2" />
                 </Button>
               </Link>
             )}
 
             {/* dark mode toggle */}
-            <DarkModeToggle />
+            <div className="my-1 mx-2" id="icon">
+              <DarkModeToggle />
+            </div>
 
-            {/* avatar */}
-            {/* 1- user image */}
-            {/* 2- user profile */}
-            {/* 3- user info */}
+            {/* user profile */}
             <UserProfile
               name={""}
               image={"https://github.com/shadcn.png"}
               className={""}
-              session={null}
+              session={session}
             />
           </div>
         </nav>
