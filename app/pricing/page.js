@@ -15,7 +15,7 @@ const nunito = Nunito({
 const page = () => {
   return (
     <div className='isolate overflow-hidden bg-[#020817]'>
-      <div className="mx-auto max-w-7xl px-6 pb-72 pt-24 text-center sm:pt-32 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 pb-80 pt-24 text-center sm:pt-32 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="font-base font-semibold leading-7 text-indigo-700 ">Pricing</h2>
           <p className={`m-2 text-4xl font-bold tracking-tight text-white sm:text-5xl ${nunito.className}`}>
@@ -24,7 +24,7 @@ const page = () => {
             Whoever You Are.
           </p>
         </div>
-        <div className="relative mt-6">
+        <div className="relative mt-6 mb-6">
           <p className='mx-auto max-w-2xl text-lg leading-8 text-white/60'>
             Were 99% sure you will love our product. But if you dont, we offer a 30-day money-back guarantee.
           </p>
@@ -55,7 +55,7 @@ const page = () => {
 
       {/* pricing card */}
       <div className="flow-root bg-white dark:bg-white pb-24 sm:pb-32">
-        <div className="-mt-64">
+        <div className="-mt-64 mx-auto flex items-center justify-center">
           <PricingCard />
         </div>
       </div>
