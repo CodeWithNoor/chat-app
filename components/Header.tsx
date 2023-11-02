@@ -24,9 +24,12 @@ const Header = async () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-[#fff] dark:bg-gray-900 border-b-2 border-[#88888821] dark:border-sky-500">
+      <header
+        id="header"
+        className="sticky top-0 z-50 bg-[#fff] dark:bg-[#020817] border-b-2 border-[#88888821] dark:border-sky-500"
+      >
         <nav
-          className="flex flex-col justify-between sm:flex-row items-center px-5 py-3 pl-2 bg-white dark:bg-gray-900 max-w-7xl mx-auto"
+          className="flex flex-col justify-between sm:flex-row items-center px-5 py-3 pl-2 bg-white dark:bg-[#020817] max-w-7xl mx-auto"
           id="navbar"
         >
           {/***************** logo ************************/}
@@ -83,6 +86,11 @@ const Header = async () => {
           </div>
         </nav>
         {/* banner upgrade pro */}
+
+        {/* 1- Building the create chat button */}
+        {/* 2- Building the home page */}
+        {/* 3- Building the pricing page */}
+        {/* 4- Responsive header */}
       </header>
     </>
   );

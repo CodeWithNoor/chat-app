@@ -27,7 +27,7 @@ export function DarkModeToggle() {
       <DropdownMenuContent
         align="end"
         id="mode"
-        className="dark:bg-[#11182756]"
+        className="dark:bg-[#11182756] bg-white"
       >
         <DropdownMenuItem onClick={() => setTheme("light")}>
           Light

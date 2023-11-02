@@ -34,7 +34,7 @@ function UserProfile({
       {session ? (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button>
+            <Button className="px-2">
               {image && (
                 <>
                   <Image
@@ -58,7 +58,7 @@ function UserProfile({
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            className="w-28 dark:bg-[#11182756]"
+            className="w-28 dark:bg-[#11182756] bg-white"
             id="account-dropdown"
           >
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
