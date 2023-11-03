@@ -10,6 +10,11 @@
   font-weight: 400;
 }
 
+/* #profile-link:hover {
+  background-color: #020817;
+  color: white;
+} */
+
 #account-dropdown,
 #mode {
   /* background-color: #11182756; */
@@ -88,3 +93,8 @@
 span.relative.flex.h-10.w-10.shrink-0.overflow-hidden.rounded-full {
   display: none !important;
 }
+
+/* #dropdown-item:hover {
+  background-color: #020817;
+  color: white;
+} */

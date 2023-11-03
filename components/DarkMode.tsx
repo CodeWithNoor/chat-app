@@ -29,13 +29,25 @@ export function DarkModeToggle() {
         id="mode"
         className="dark:bg-[#11182756] bg-white"
       >
-        <DropdownMenuItem onClick={() => setTheme("light")}>
+        <DropdownMenuItem
+          id="dropdown-item"
+          className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
+          onClick={() => setTheme("light")}
+        >
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
+        <DropdownMenuItem
+          id="dropdown-item"
+          className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
+          onClick={() => setTheme("dark")}
+        >
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        <DropdownMenuItem
+          id="dropdown-item"
+          className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
+          onClick={() => setTheme("system")}
+        >
           System
         </DropdownMenuItem>
       </DropdownMenuContent>

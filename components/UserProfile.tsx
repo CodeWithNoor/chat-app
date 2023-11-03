@@ -66,21 +66,21 @@ function UserProfile({
             <DropdownMenuGroup>
               <DropdownMenuItem
                 id="profile-link"
-                className="hover:bg-gray-900 hover:dark:bg-[#ffffff69]"
+                className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
               >
                 <User className="mr-2 h-4 w-4" />
                 <span>Profile</span>
               </DropdownMenuItem>
               <DropdownMenuItem
                 id="profile-link"
-                className="hover:bg-gray-900 hover:dark:bg-[#ffffff69]"
+                className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
               >
                 <CreditCard className="mr-2 h-4 w-4" />
                 <span>Billing</span>
               </DropdownMenuItem>
               <DropdownMenuItem
                 id="profile-link"
-                className="hover:bg-gray-900 hover:dark:bg-[#ffffff69]"
+                className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
                 onClick={() => signOut()}
               >
                 <LogOut className="mr-2 h-4 w-4" />

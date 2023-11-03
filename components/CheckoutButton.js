@@ -1,9 +1,14 @@
 "use client"
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const CheckoutButton = () => {
+  const router = useRouter();
+
   const createCheckoutSession = async () => {
     console.log("createCheckoutSession");
+    router.push("/chat")
+    // alert("sign in to chatting app")
   }
 
   return <>

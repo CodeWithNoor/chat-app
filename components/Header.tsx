@@ -20,7 +20,7 @@ const nunito = Nunito({
 
 const Header = async () => {
   const session = await getServerSession();
-  console.log(session, "session");
+  // console.log(session, "session");
 
   return (
     <>
@@ -85,6 +85,11 @@ const Header = async () => {
             />
           </div>
         </nav>
+
+        {/* banner */}
+        <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-50% to-indigo-500 to-90% py-1 px-4 text-center text-white">
+          Unlock the power of ChatWithAnyOne If You Are Not A Premium User
+        </div>
       </header>
     </>
   );
