@@ -12,7 +12,7 @@ const nunito = Nunito({
   display: "swap",
 })
 
-const page = () => {
+const Pricing = () => {
   return (
     <div className='isolate overflow-hidden bg-[#020817]'>
       <div className="mx-auto max-w-7xl px-6 pb-80 pt-24 text-center sm:pt-32 lg:px-8">
@@ -56,11 +56,11 @@ const page = () => {
       {/* pricing card */}
       <div className="flow-root bg-white dark:bg-white pb-24 sm:pb-32">
         <div className="-mt-64 mx-auto flex items-center justify-center">
-          <PricingCard />
+          <PricingCard redirect={true} />
         </div>
       </div>
     </div>
   )
 }
 
-export default page
+export default Pricing

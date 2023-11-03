@@ -85,12 +85,7 @@ const Header = async () => {
             />
           </div>
         </nav>
-        {/* banner upgrade pro */}
 
-        {/* 1- Building the create chat button */}
-        {/* 2- Building the home page */}
-        {/* 3- Building the pricing page */}
-        {/* 4- Responsive header */}
       </header>
     </>
   );

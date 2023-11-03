@@ -32,9 +32,13 @@ export default function Home() {
                   Let AI Handle the Translation
                 </span>
               </p>
-              <Button className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white w-32">
-                <span>Get Started</span>
-              </Button>
+
+              {/* I can't chatting becuase restricted to chat page if users is does'nt exsist add some logics then chatting */}
+              <Link href={"/chat"}>
+                <Button className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white w-32">
+                  <span>Get Started</span>
+                </Button>
+              </Link>
 
               <Link href={"/pricing"}>
                 <Button className="btn-hover color-9 w-32">
