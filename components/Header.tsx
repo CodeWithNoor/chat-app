@@ -20,7 +20,7 @@ const nunito = Nunito({
 
 const Header = async () => {
   const session = await getServerSession();
-  // console.log(session, "session");
+  console.log(session, "session");
 
   return (
     <>
@@ -85,7 +85,6 @@ const Header = async () => {
             />
           </div>
         </nav>
-
       </header>
     </>
   );
