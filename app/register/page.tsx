@@ -13,7 +13,7 @@ const nunito = Nunito({
 
 const page = async ({ name }: { name: string | null }) => {
   const session = await getServerSession(authOptions);
-//   console.log(session);
+  console.log(session);
 
   return (
     <div className="isolate overflow-hidden bg-[#020817]">
@@ -31,8 +31,8 @@ const page = async ({ name }: { name: string | null }) => {
         </div>
         <div className="relative mt-6 mb-6">
           <p className="mx-auto max-w-2xl text-lg leading-8 text-white/60">
-            Were 99% sure you will love our product. But if you dont, we offer a
-            30-day money-back guarantee.
+            Were 99% sure you will love our product. But if you don't, we offer
+            a 30-days money-back guarantee.
           </p>
 
           {/* arrow */}
