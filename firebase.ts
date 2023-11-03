@@ -25,3 +25,4 @@ const auth = getAuth(app);
 const functions = getFunctions(app);
 
 export { db, auth, functions };
+
