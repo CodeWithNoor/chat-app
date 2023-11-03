@@ -58,7 +58,9 @@ export default function PricingCard({ redirect }: { redirect: boolean }) {
                     className={`text-4xl font-extrabold text-gray-900 ${nunito.className}`}
                   >
                     {tier.price}
-                    <span>/month</span>
+                    <span className="text-sm text-gray-500 font-medium">
+                      /month
+                    </span>
                   </span>
                 ) : (
                   <p className="text-4xl font-extrabold text-gray-900">Free</p>

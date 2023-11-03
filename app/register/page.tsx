@@ -13,7 +13,8 @@ const nunito = Nunito({
 
 const page = async ({ name }: { name: string | null }) => {
   const session = await getServerSession(authOptions);
-  console.log(session);
+//   console.log(session);
+
   return (
     <div className="isolate overflow-hidden bg-[#020817]">
       <div className="mx-auto max-w-7xl px-6 pb-80 pt-24 text-center sm:pt-32 lg:px-8">
