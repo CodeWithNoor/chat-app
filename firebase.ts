@@ -11,11 +11,11 @@ import { getFunctions } from "firebase/functions";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_APIKEY,
-  authDomain: "chat-app-translator-f1ff4.firebaseapp.com",
-  projectId: "chat-app-translator-f1ff4",
-  storageBucket: "chat-app-translator-f1ff4.appspot.com",
-  messagingSenderId: "211884311297",
-  appId: "1:211884311297:web:ce375d6049c0cbd6c35100",
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGE_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
@@ -25,4 +25,3 @@ const auth = getAuth(app);
 const functions = getFunctions(app);
 
 export { db, auth, functions };
-
