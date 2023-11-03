@@ -3,9 +3,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import LogoImg from "@/images/logo-svg.svg";
-import { MdOutlineChat } from "react-icons/md";
+import { MdOutlineChat, MdPaid } from "react-icons/md";
 import { BsTranslate } from "react-icons/bs";
-import PaidIcon from "@mui/icons-material/Paid";
+// import PaidIcon from "@mui/icons-material/Paid";
+// import { MdPaid } from "react-icons/md";
 import { Button } from "./ui/button";
 import UserProfile from "./UserProfile";
 import { Nunito } from "next/font/google";
@@ -66,7 +67,7 @@ const Header = async () => {
             ) : (
               <Link href={"/pricing"} prefetch={false}>
                 <Button size={"icon"} className="my-1 mx-2" id="icon">
-                  <PaidIcon className="text-4xl p-2" />
+                  <MdPaid className="text-4xl p-2" />
                 </Button>
               </Link>
             )}
@@ -87,10 +88,15 @@ const Header = async () => {
         </nav>
 
         {/* banner */}
-        {/* if user is no exsist then show banner */}
-        {!session && (
+        {/* if user is no exsist then show banner is just example*/}
+        {/* if user is not premium */}
+        {!session ? (
           <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-50% to-indigo-500 to-90% py-1 px-4 text-center text-white">
-            Unlock the power of ChatWithAnyOne If You Are Not A Premium User
+            Unlock the power of ChatWithAnyOne If You Are Not A Premium Member
+          </div>
+        ) : (
+          <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-50% to-indigo-500 to-90% py-1 px-4 text-center text-white">
+            Unlock the power of ChatWithAnyOne If You Are A Premium Member
           </div>
         )}
       </header>
