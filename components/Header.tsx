@@ -87,9 +87,12 @@ const Header = async () => {
         </nav>
 
         {/* banner */}
-        <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-50% to-indigo-500 to-90% py-1 px-4 text-center text-white">
-          Unlock the power of ChatWithAnyOne If You Are Not A Premium User
-        </div>
+        {/* if user is no exsist then show banner */}
+        {!session && (
+          <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-50% to-indigo-500 to-90% py-1 px-4 text-center text-white">
+            Unlock the power of ChatWithAnyOne If You Are Not A Premium User
+          </div>
+        )}
       </header>
     </>
   );
