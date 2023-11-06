@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import LogoImg from "@/images/logo-svg.svg";
 import { MdOutlineChat, MdPaid } from "react-icons/md";
-import { BsTranslate } from "react-icons/bs";
+// import { BsTranslate } from "react-icons/bs";
 // import PaidIcon from "@mui/icons-material/Paid";
 // import { MdPaid } from "react-icons/md";
 import { Button } from "./ui/button";
