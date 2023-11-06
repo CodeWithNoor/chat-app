@@ -35,31 +35,31 @@ const translator = () => {
               id="profile-link"
               className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
             >
-              <div>English</div>
+              <p>English</p>
             </DropdownMenuItem>
             <DropdownMenuItem
               id="profile-link"
               className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
             >
-              <div>Arabic</div>
+              <p>Arabic</p>
             </DropdownMenuItem>
             <DropdownMenuItem
               id="profile-link"
               className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
             >
-              <div>Urdu</div>
+              <p>Urdu</p>
             </DropdownMenuItem>
             <DropdownMenuItem
               id="profile-link"
               className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
             >
-              <div>Spanish</div>
+              <p>Spanish</p>
             </DropdownMenuItem>
             <DropdownMenuItem
               id="profile-link"
               className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
             >
-              <div>Turkey</div>
+              <p>Turkey</p>
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
