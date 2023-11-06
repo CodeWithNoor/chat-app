@@ -13,13 +13,13 @@ const nunito = Nunito({
 
 const page = async ({ name }: { name: string | null }) => {
   const session = await getServerSession(authOptions);
-  console.log(session);
+  console.log(session, "for registration page");
 
   return (
     <div className="isolate overflow-hidden bg-[#020817]">
       <div className="mx-auto max-w-7xl px-6 pb-80 pt-24 text-center sm:pt-32 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <h2 className="font-base font-semibold leading-7 text-indigo-700 ">
+          <h2 className="font-base font-semibold leading-7 text-indigo-700">
             Let's Get Started
           </h2>
           <p
@@ -35,7 +35,7 @@ const page = async ({ name }: { name: string | null }) => {
             a 30-days money-back guarantee.
           </p>
 
-          {/* arrow */}
+          {/* animated arrow */}
           <div
             className="mx-auto mt-9 animate-bounce w-11 h-11 text-white text-center "
             id="icon"
@@ -45,7 +45,7 @@ const page = async ({ name }: { name: string | null }) => {
         </div>
       </div>
 
-      {/* pricing card */}
+      {/* pricing card for registration rdirectiion false */}
       <div className="flow-root bg-white dark:bg-white pb-24 sm:pb-32">
         <div className="-mt-64 mx-auto flex items-center justify-center">
           <PricingCard redirect={false} />

@@ -1,14 +1,20 @@
 "use client"
 import React from "react";
 import { useRouter } from "next/navigation";
+import { db } from "@/firebase";
+
+// 2:30 to 3:00 again re watch the video because setup in payment and language translator
 
 const CheckoutButton = () => {
   const router = useRouter();
 
   const createCheckoutSession = async () => {
-    console.log("createCheckoutSession");
-    router.push("/chat")
-    // alert("sign in to chatting app")
+    const docRef = await addDoc(collection(db, 'customers', session.user.id, 'checkout_sessions'), {
+      // TODO: ADD PRICE ID
+      price: 'price_1JGcX7Jp9gjY4X7d8c6Ij7gk',
+      success_url: window.location.origin, // redirect back to the original location
+      cancel_url: window.location.origin,
+    });
   }
 
   return <>

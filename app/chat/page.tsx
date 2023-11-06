@@ -1,7 +1,14 @@
 import React from "react";
-import Link from "next/link";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getServerSession } from "next-auth";
+import { Nunito } from "next/font/google";
+import { Button } from "@/components/ui/button";
+
+const nunito = Nunito({
+  weight: "800",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const page = async ({
   name,
@@ -15,12 +22,16 @@ const page = async ({
   details: string;
 }) => {
   const session = await getServerSession();
+  console.log(session);
+
   return (
     <>
       <div className="isolate overflow-hidden bg-[#020817] h-screen">
         <div className="mx-auto max-w-7xl px-6 pb-80 pt-24 text-center sm:pt-32 lg:px-8">
-          <p className="text-muted font1-1 text-white">Chat</p>
-          <Link href={"/"}>Go to Home</Link>
+          <h1 className={`text-muted text-3xl text-white ${nunito.className}`}>
+            Chat
+          </h1>
+          <Button className="my-1 mx-2 btn-hover color-9">Go to Home</Button>
           <div className="flex items-center space-x-4">
             <Skeleton className="h-12 w-12 rounded-full bg-gray-500" />
             <div className="space-y-2">

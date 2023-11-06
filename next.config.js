@@ -24,7 +24,9 @@ const nextConfig = {
         FIREBASE_STORAGE_BUCKET: "chat-app-translator-f1ff4.appspot.com",
         FIREBASE_MESSAGE_SENDER_ID: "211884311297",
         FIREBASE_APP_ID: "1:211884311297:web:ce375d6049c0cbd6c35100",
+        STRIPE_SECRET_KEY: "sk_test_510084uKDjTc6FlwiQpBFxveZOmaHvtXsM6QrCqMXMeynZNr8Jw73KUICUfMn3WGVjSjsn9Di707l68OUfLT44G0300Xea4R3Fj",
     }
 }
 
 module.exports = nextConfig
+

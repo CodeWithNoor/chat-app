@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import ChatImag from "@/images/chat.webp";
 import Link from "next/link";
 // import "./globals.css";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/auth";
 
 const nunito = Nunito({
   weight: "800",
@@ -13,7 +15,10 @@ const nunito = Nunito({
   display: "swap",
 });
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession(authOptions);
+  // console.log(session);
+
   return (
     <main className="dark:bg-[#020817] h-screen">
       <div className="relative isolate pt-20 dark:bg-[#020817]">

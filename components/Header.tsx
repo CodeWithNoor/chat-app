@@ -12,6 +12,8 @@ import UserProfile from "./UserProfile";
 import { Nunito } from "next/font/google";
 import { getServerSession } from "next-auth";
 import "./styling/header.css";
+import { authOptions } from "@/auth";
+import Translator from "./translator";
 
 const nunito = Nunito({
   weight: "800",
@@ -20,8 +22,8 @@ const nunito = Nunito({
 });
 
 const Header = async () => {
-  const session = await getServerSession();
-  // console.log(session, "session");
+  const session = await getServerSession(authOptions);
+  // console.log(session);
 
   return (
     <>
@@ -56,7 +58,7 @@ const Header = async () => {
           <div className="flex items-center justify-end">
             {/* chat */}
             <Button size={"icon"} className="my-1 mx-2" id="icon">
-              <BsTranslate className="text-4xl p-2" />
+              <Translator />
             </Button>
 
             {/* session if user logged in or not */}
