@@ -13,7 +13,7 @@ const nunito = Nunito({
 
 const page = async ({ name }: { name: string | null }) => {
   const session = await getServerSession(authOptions);
-  console.log(session, "for registration page");
+  // console.log(session, "for registration page");
 
   return (
     <div className="isolate overflow-hidden bg-[#020817]">
