@@ -7,7 +7,7 @@ import { MdOutlineChat, MdPaid } from "react-icons/md";
 // import { BsTranslate } from "react-icons/bs";
 // import PaidIcon from "@mui/icons-material/Paid";
 // import { MdPaid } from "react-icons/md";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import UserProfile from "./UserProfile";
 import { Nunito } from "next/font/google";
 import { getServerSession } from "next-auth";

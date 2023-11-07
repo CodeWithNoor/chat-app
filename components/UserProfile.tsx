@@ -2,7 +2,7 @@
 import React from "react";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { CreditCard, LogOut, User } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,

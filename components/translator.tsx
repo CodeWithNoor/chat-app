@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { BsTranslate } from "react-icons/bs";
 import {
@@ -9,7 +10,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuItem 
 } from "@/components/ui/dropdown-menu";
-import { Button } from "@mui/material";
+import { Button } from "@/components/ui/button";
 
 export default function Translator() {
   return (

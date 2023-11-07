@@ -2,7 +2,7 @@ import React from "react";
 import { Nunito } from "next/font/google";
 import Link from "next/link";
 import CheckoutButton from "./CheckoutButton";
-import {Button} from "./ui/button"
+import { Button } from "@/components/ui/button";
 
 const data = [
   {
@@ -45,7 +45,7 @@ export default function PricingCard({ redirect }: { redirect: boolean }) {
     <>
       <div className="max-auto grid max-w-md grid-cols-1 gap-8 lg:grid-cols-2 lg:max-w-4xl ">
         {data.map((tier) => (
-          <div className="flex flex-col mx-2 justify-between rounded-3xl bg-white shadow-xl p-8 ring-1 ring-gray-900/10 sm:p-10">
+          <div key={tier.id} className="flex flex-col mx-2 justify-between rounded-3xl bg-white shadow-xl p-8 ring-1 ring-gray-900/10 sm:p-10">
             <div key={tier.id}>
               <h3
                 className={`text-base text-semibold text-[#0ea5e9] ${nunito.className}`}
@@ -72,9 +72,9 @@ export default function PricingCard({ redirect }: { redirect: boolean }) {
                 {tier.description}
               </p>
               <div>
-                {tier.features.map((featureItem) => (
+                {tier.features.map((featureItem, id) => (
                   <>
-                    <span className="flex h-2 w-2 translate-y-5 rounded-full bg-sky-500" />
+                    <span key={id} className="flex h-2 w-2 translate-y-5 rounded-full bg-sky-500" />
                     <div className="space-x-7"></div>
                     <p className="text-base text-gray-500 my-1 ml-7">
                       {featureItem}
@@ -85,7 +85,6 @@ export default function PricingCard({ redirect }: { redirect: boolean }) {
 
               {redirect ? (
                 <Button
-
                   className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-5 py-2 mt-12
                    hover:bg-gradient-to-r hover:from-indigo-500 hover:to-blue-500 text-white dark:text-white"
                 >

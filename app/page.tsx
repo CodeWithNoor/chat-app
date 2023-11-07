@@ -17,7 +17,7 @@ const nunito = Nunito({
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
-  // console.log(session, "for home page");
+  // console.log(session);
 
   return (
     <main className="dark:bg-[#020817] h-screen">

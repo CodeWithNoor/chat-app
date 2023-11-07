@@ -30,6 +30,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
+    "sharp": "^0.32.6",
+    "stripe": "^14.3.0",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7"
   },

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
-import { ClientProvider } from "@/components/clientProvider";
+import { ClientProvider } from "@/components/ClientProvider";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -26,7 +26,7 @@ export default function RootLayout({
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"
-            crossOrigin="anonymous"
+            crossOrigin={"anonymous"}
           />
           <link
             href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap"

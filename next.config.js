@@ -1,6 +1,7 @@
 const hostnames = [
     'github.com',
-    'lh3.googleusercontent.com']
+    'lh3.googleusercontent.com',
+    'avatars.githubusercontent.com']
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -13,6 +14,8 @@ const nextConfig = {
     env: {
         GOOGLE_ID: '211884311297-oasuoff16nl044v5helrd02520egh81b.apps.googleusercontent.com',
         GOOGLE_SECRET: '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',
+        GITHUB_ID: "eab91b00885e5e9d9842",
+        GITHUB_SECRET: "d5a405bf9c944af388144065a4c357216bc9b5a4",
         NEXTAUTH_URL: "http://localhost:3000/",
         NEXTAUTH_SECRET: 'say_lalisa_love_me_lalisa_love_me_hey',
         FIREBASE_APIKEY: 'AIzaSyB-P_jB_cq4yYPFjTyTWdTT4S4jb4-JKyg',
@@ -24,7 +27,7 @@ const nextConfig = {
         FIREBASE_MESSAGE_SENDER_ID: "211884311297",
         FIREBASE_APP_ID: "1:211884311297:web:ce375d6049c0cbd6c35100",
         STRIPE_SECRET_KEY: "sk_test_510084uKDjTc6FlwiQpBFxveZOmaHvtXsM6QrCqMXMeynZNr8Jw73KUICUfMn3WGVjSjsn9Di707l68OUfLT44G0300Xea4R3Fj",
-        FIREBASE_MODE: "subscription_pro_membership"
+        FIREBASE_PAYMENT_MODE: "subscription"
     },
 }
 
