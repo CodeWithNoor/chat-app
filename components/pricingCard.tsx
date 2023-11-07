@@ -45,7 +45,10 @@ export default function PricingCard({ redirect }: { redirect: boolean }) {
     <>
       <div className="max-auto grid max-w-md grid-cols-1 gap-8 lg:grid-cols-2 lg:max-w-4xl ">
         {data.map((tier) => (
-          <div key={tier.id} className="flex flex-col mx-2 justify-between rounded-3xl bg-white shadow-xl p-8 ring-1 ring-gray-900/10 sm:p-10">
+          <div
+            key={tier.id}
+            className="flex flex-col mx-2 justify-between rounded-3xl bg-white shadow-xl p-8 ring-1 ring-gray-900/10 sm:p-10"
+          >
             <div key={tier.id}>
               <h3
                 className={`text-base text-semibold text-[#0ea5e9] ${nunito.className}`}
@@ -74,7 +77,10 @@ export default function PricingCard({ redirect }: { redirect: boolean }) {
               <div>
                 {tier.features.map((featureItem, id) => (
                   <>
-                    <span key={id} className="flex h-2 w-2 translate-y-5 rounded-full bg-sky-500" />
+                    <span
+                      key={id}
+                      className="flex h-2 w-2 translate-y-5 rounded-full bg-sky-500"
+                    />
                     <div className="space-x-7"></div>
                     <p className="text-base text-gray-500 my-1 ml-7">
                       {featureItem}

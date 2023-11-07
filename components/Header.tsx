@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import LogoImg from "@/images/logo-svg.svg";
 import { MdOutlineChat, MdPaid } from "react-icons/md";
-// import { BsTranslate } from "react-icons/bs";
+import { BsTranslate } from "react-icons/bs";
 // import PaidIcon from "@mui/icons-material/Paid";
 // import { MdPaid } from "react-icons/md";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,7 @@ import { Nunito } from "next/font/google";
 import { getServerSession } from "next-auth";
 import "./styling/header.css";
 import { authOptions } from "@/auth";
-import Translator from "./Translator";
+// import LanguageTranslator from "./LanguageTranslator";
 
 const nunito = Nunito({
   weight: "800",
@@ -23,7 +23,7 @@ const nunito = Nunito({
 
 const Header = async () => {
   const session = await getServerSession(authOptions);
-  // console.log(session);
+  console.log(session);
 
   return (
     <>
@@ -58,7 +58,7 @@ const Header = async () => {
           <div className="flex items-center justify-end">
             {/* chat */}
             <Button size={"icon"} className="my-1 mx-2" id="icon">
-              <Translator />
+              <BsTranslate className="text-4xl p-2" /> {/* <LanguageTranslator /> */}
             </Button>
 
             {/* session if user logged in or not */}

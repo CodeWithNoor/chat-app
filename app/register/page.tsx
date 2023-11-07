@@ -11,7 +11,7 @@ const nunito = Nunito({
   display: "swap",
 });
 
-const Page = async () => {
+const Register = async () => {
   const session = await getServerSession(authOptions);
   console.log(session, "for registration page");
 
@@ -25,13 +25,14 @@ const Page = async () => {
           <p
             className={`m-2 text-4xl font-bold tracking-tight text-white sm:text-4xl ${nunito.className}`}
           >
-            Let&apos;s handle your membership {session?.user?.name?.split(" ")[0]}
+            Let&apos;s handle your membership{" "}
+            {session?.user?.name?.split(" ")[0]}
           </p>
         </div>
         <div className="relative mt-6 mb-6">
           <p className="mx-auto max-w-2xl text-lg leading-8 text-white/60">
-            Were 99% sure you will love our product. But if you don&apos;t, we offer
-            a 30-days money-back guarantee.
+            Were 99% sure you will love our product. But if you don&apos;t, we
+            offer a 30-days money-back guarantee.
           </p>
 
           {/* animated arrow */}
@@ -54,4 +55,4 @@ const Page = async () => {
   );
 };
 
-export default Page;
+export default Register;

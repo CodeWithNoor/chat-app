@@ -1,5 +1,4 @@
 "use client";
-
 import { signInWithCustomToken } from "firebase/auth";
 import { Session } from "next-auth";
 import React, { useEffect } from "react";
@@ -22,12 +21,16 @@ const FirebaseAuthProvider = ({ children }: { children: React.ReactNode }) => {
   const { data: session } = useSession();
 
   useEffect(() => {
-    if (!session) return;
-
+    if (!session)return;
+  
     syncFirebaseToken(session);
   }, [session]);
 
-  return <>{children}</>;
+  return (
+  <>
+  {children}
+  </>
+  )
 };
 
 export default FirebaseAuthProvider;

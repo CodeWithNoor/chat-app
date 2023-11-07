@@ -11,7 +11,7 @@ const nunito = Nunito({
   display: "swap",
 });
 
-const page = async () => {
+const Chat = async () => {
   debugger;
   const session = await getServerSession();
   console.log("session for chat page", session);
@@ -39,4 +39,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Chat;

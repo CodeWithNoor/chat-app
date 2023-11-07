@@ -1,4 +1,3 @@
-"use client"
 import React from "react";
 import { BsTranslate } from "react-icons/bs";
 import {
@@ -8,19 +7,16 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-  DropdownMenuItem 
+  DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 
-export default function Translator() {
+export default function LanguageTranslator() {
   return (
     <>
-      {/* setup firebase extension translator ai and stripe payment account to create and download firebase extension */}
-      {/* firebase extension setup and stripe account setup ---> 2:30 to 3:00 */}
-      {/* firebase support translate in any language by using AI */}
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button className="px-2">
+        <DropdownMenuTrigger>
+          <Button className="px-2" variant="outline">
             <BsTranslate className="text-4xl p-2" />
           </Button>
         </DropdownMenuTrigger>
