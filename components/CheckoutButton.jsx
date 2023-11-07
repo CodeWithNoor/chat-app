@@ -4,11 +4,18 @@ import { db } from "@/firebase";
 // import { onSnapshot } from "firebase/firestore";
 import { Button } from "@/components/ui/button"
 import { addDoc } from "firebase/firestore";
+import { collection } from "firebase/firestore";
+import { useSession } from "next-auth/react";
+import { onSnapshot } from "firebase/firestore";
 
 // 2:30 to 3:00 again re watch the video because setup in payment and language translator
 
 const CheckoutButton = () => {
+  console.log(onSnapshot, "onSnapshot firebase firestore")
   const { loading, setLoading } = useState(true);
+  const session = useSession();
+  // const {data: session} = useSession(); // this is the way to get the data from the session
+  console.log(session, "session next auth")
 
   const createCheckoutSession = async () => {
     // console.log("You clicked me at checkout for premium")
@@ -35,34 +42,28 @@ const CheckoutButton = () => {
         }
 
         if (url) {
-          window.location.assign(url);  // navigates to givrn url
-          setLoading(false)
-        } else {
-          console.log("No URL found!!! Something went wrong")
+          window.location.assign(url);  // navigates to given url
+          setLoading(true)
         }
       } catch (error) {
-        console.log("Error in checkout button for premium users", error)
+        console.log("Error in checkout for premium users error")
       }
     })
   }
 
-  return <>
-    {
-      loading ? <Button
-        className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-5 py-2 mt-12
-    hover:bg-gradient-to-r hover:from-indigo-500 hover:to-blue-500 text-white dark:text-white" onClick={createCheckoutSession}
-      >
-        loading...
-      </Button> :
-        <Button
+  return (
+    <>
+      {
+        loading ? <Button
           className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-5 py-2 mt-12
-      hover:bg-gradient-to-r hover:from-indigo-500 hover:to-blue-500 text-white dark:text-white" onClick={createCheckoutSession}
-        >
-          Get Premium
-        </Button>
-    }
-
-  </>;
+  hover:bg-gradient-to-r hover:from-indigo-500 hover:to-blue-500 text-white dark:text-white" onClick={() => createCheckoutSession()}
+        >  Loading... </Button> : <Button
+          className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-5 py-2 mt-12
+hover:bg-gradient-to-r hover:from-indigo-500 hover:to-blue-500 text-white dark:text-white" onClick={() => createCheckoutSession()}
+        >  Get Premium </Button>
+      }
+    </>
+  )
 };
 
 export default CheckoutButton;

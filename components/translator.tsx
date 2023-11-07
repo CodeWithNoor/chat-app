@@ -1,18 +1,17 @@
-"use client";
 import React from "react";
 import { BsTranslate } from "react-icons/bs";
-import { Button } from "./ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
+  DropdownMenuItem 
 } from "@/components/ui/dropdown-menu";
+import { Button } from "@mui/material";
 
-const translator = () => {
+export default function Translator() {
   return (
     <>
       {/* setup firebase extension translator ai and stripe payment account to create and download firebase extension */}
@@ -67,6 +66,4 @@ const translator = () => {
       </DropdownMenu>
     </>
   );
-};
-
-export default translator;
+}

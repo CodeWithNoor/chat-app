@@ -26,7 +26,7 @@ export default function RootLayout({
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"
-            crossOrigin=""
+            crossOrigin="anonymous"
           />
           <link
             href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap"

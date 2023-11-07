@@ -13,7 +13,7 @@ import { Nunito } from "next/font/google";
 import { getServerSession } from "next-auth";
 import "./styling/header.css";
 import { authOptions } from "@/auth";
-import Translator from "./translator";
+import Translator from "./Translator";
 
 const nunito = Nunito({
   weight: "800",
