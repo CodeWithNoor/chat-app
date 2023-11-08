@@ -9,7 +9,7 @@ import { useSession } from "next-auth/react";
 const CheckoutButton = () => {
   const [loading, setLoading] = useState(false);
   const session = useSession();
-  console.log(session.data, "data")
+  console.log(session.data, "data") // data is undefined because setup in firebase extension is not done yet
 
 
   const createCheckoutSession = async () => {
