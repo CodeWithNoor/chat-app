@@ -18,7 +18,6 @@ const nunito = Nunito({
   display: "swap",
 });
 
-
 const Header = async () => {
   const session = await getServerSession(authOptions);
 
