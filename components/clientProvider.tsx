@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { SessionProvider as Provider } from "next-auth/react";
 // import { firebaseApp } from "./Firebase";
