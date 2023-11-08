@@ -40,6 +40,14 @@ export interface Subscription {
   trial_start?: Timestamp | null;
   trial_end?: Timestamp | null;
 
+  cancel_url?: string;
+  client_reference_id?: string;
+  promotion_code?: string;
+  success_url?: string;
+  trial_from_plan?: boolean;
+  activeOnly?: boolean;
+  currency?: string;
+
   // userId: string;
   // status: string;
   // priceId: string;
@@ -57,11 +65,5 @@ export interface Subscription {
   // product?: string;
   // trial_period_days?: number;
 
-  cancel_url?: string;
-  client_reference_id?: string;
-  promotion_code?: string;
-  success_url?: string;
-  trial_from_plan?: boolean;
-  activeOnly?: boolean;
-  currency?: string;
+ 
 }
