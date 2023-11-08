@@ -28,27 +28,12 @@ export default function RootLayout({
             <link
               rel="preconnect"
               href="https://fonts.gstatic.com"
-              crossOrigin={"anonymous"}
+              crossOrigin="anonymous"
             />
             <link
               href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap"
               rel="stylesheet"
             />
-            <script
-              src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-              integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-              crossOrigin="anonymous"
-            ></script>
-            <script
-              src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-              integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-              crossOrigin="anonymous"
-            ></script>
-            <script
-              src="https://code.jquery.com/jquery-3.4.1.min.js"
-              integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-              crossOrigin="anonymous"
-            ></script>
           </head>
           <body className={inter.className}>
             <ThemeProvider
