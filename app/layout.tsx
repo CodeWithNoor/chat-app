@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import { ClientProvider } from "@/components/ClientProvider";
 import "./globals.css";
 import { Providers } from "@/app/redux/Providers";
-import { store } from "@/app/redux/store";
+// import { store } from "@/app/redux/store";
 
 const inter = Inter({ subsets: ["latin"] });
 
