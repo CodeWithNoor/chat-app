@@ -18,17 +18,18 @@ export async function POST(req) {
     }
 }
 
-export async function GET(req, res) {
+export async function GET() {
     try {
-        const targetLanguage = ["en", "it", "es", "de"]
-        const translation = await translate(textToTranslate, { to: targetLanguage });
+        // const targetLanguage = ["en", "it", "es", "de"]
+        // const translation = await translate(textToTranslate, { to: targetLanguage });
 
         return NextResponse.json({
             message: "Translation successful",
-            input_text: textToTranslate,
-            translated_text: translation.text,
-            detected_source_language: translation.from.language.iso,
-            target_language: targetLanguage, success: true
+            // input_text: textToTranslate,
+            // translated_text: translation.text,
+            // detected_source_language: translation.from.language.iso,
+            // target_language: targetLanguage, 
+            success: true
         }, { status: 200 })
 
     } catch (error) {

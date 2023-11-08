@@ -58,7 +58,7 @@ function UserProfile({
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            className="w-28 dark:bg-[#11182756] bg-white"
+            className="w-48 dark:bg-[#11182756] bg-white"
             id="account-dropdown"
           >
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -69,14 +69,8 @@ function UserProfile({
                 className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
               >
                 <User className="mr-2 h-4 w-4" />
-                <span>Profile</span>
-              </DropdownMenuItem>
-              <DropdownMenuItem
-                id="profile-link"
-                className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
-              >
-                <CreditCard className="mr-2 h-4 w-4" />
-                <span>Billing</span>
+                {/* <span>Profile</span> */}
+                <span>{session?.user?.name}</span>
               </DropdownMenuItem>
               <DropdownMenuItem
                 id="profile-link"
