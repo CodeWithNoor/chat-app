@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-// import { onSnapshot } from "firebase/firestore";
 import { Button } from "@/components/ui/button"
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/firebase";

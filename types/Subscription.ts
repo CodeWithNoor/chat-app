@@ -1,5 +1,7 @@
 import stripe from "stripe";
-import { DocumentData, DocumentReference, Timestamp } from "firebase/firestore";
+import { DocumentData, DocumentReference, Timestamp, collection } from "firebase/firestore";
+import { db } from "@/firebase";
+import SubscriptionConverter from "@/lib/coverter/Subscription";
 
 export interface Subscription {
   id?: string;
@@ -67,3 +69,6 @@ export interface Subscription {
 
  
 }
+
+
+export const subscriptionRef = (userId: string) => collection(db, "customers", userId, "subscriptions").withConverter(SubscriptionConverter);
