@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 import { ClientProvider } from "@/components/ClientProvider";
 import "./globals.css";
+import { Providers } from "@/app/redux/Providers";
+import { store } from "@/app/redux/store";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,33 +20,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClientProvider>
-      <html lang="en">
-        <head>
-          <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin={"anonymous"}
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap"
-            rel="stylesheet"
-          />
-        </head>
-        <body className={inter.className}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Header />
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClientProvider>
+    <>
+      <ClientProvider>
+        <html lang="en">
+          <head>
+            <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={"anonymous"}/>
+            <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap" rel="stylesheet"/>
+          </head>
+          <body className={inter.className}>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+              <Header />
+              <Providers>{children}</Providers> {/* wrap in state management */}
+            </ThemeProvider>
+          </body>
+        </html>
+      </ClientProvider>
+    </>
   );
 }
