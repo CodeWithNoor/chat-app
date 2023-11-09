@@ -81,11 +81,11 @@ const CreateChatButton = () => {
 
         const chatId = uuidv4();
 
-        toast({
-            title: " Hurrah! ",
-            description: " You are Registered For Chatting!!! Let's Chat ",
-            duration: 5000,
-        });
+        // toast({
+        //     title: " Hurrah! ",
+        //     description: " You are Registered For Chatting!!! Let's Chat ",
+        //     duration: 5000,
+        // });
 
         console.log(toast, "toast")
 
