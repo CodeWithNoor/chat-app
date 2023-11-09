@@ -1,31 +1,85 @@
 "use client";
-import React, { useState, useEffect } from "react";
+// import Link from "next/link";
+// import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+// import isLarge from "@/lib/utils/isLarge";
+// import useSubscriptionStore from "@/stores/useSubscriptionStore";
+import React, { useState } from "react";
 import { MdOutlineChat } from "react-icons/md";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { v4 as uuidv4 } from "uuid";
 import { serverTimestamp, setDoc } from "firebase/firestore";
 import { addChatRef } from "@/lib/coverter/ChatMember";
-// import isLarge from "@/lib/utils/isLarge";
-// import useSubscriptionStore from "@/stores/useSubscriptionStore";
 
 const CreateChatButton = () => {
-    const router = useRouter();
     //   const useSubscription = useSubscriptionStore((state) => state.useSubscription);
+    // console.log(session?.user?.id)
+    const router = useRouter();
     const { data: session } = useSession();
-    console.log(session?.user?.id);
-    const [loading, setLoading] = useState(false);
+    // console.log(session.user.id, "session")
+    const [loading, setLoading] = useState(true);
     const { toast } = useToast();
-    console.log(session?.user?.id)
-    console.log(uuidv4)
+    const chatId = uuidv4();
+
+    // const createNewChat = async () => {
+    //     // debugger;
+
+    //     setLoading(true);
+    //     if (session?.user?.id) return;
+
+    //     toast({
+    //         title: " Hurrah! ",
+    //         description: " You are Registered For Chatting!!! Let's Chat ",
+    //         duration: 5000,
+    //     });
+
+    //     setDoc(addChatRef(chatId, session.user.id), {
+    //         userId: session.user.id,
+    //         email: session.user.email,
+    //         timeStamp: serverTimestamp(),
+    //         isAdmin: true,
+    //         chatId: chatId,
+    //         image: session.user.image || "",
+    //     }).then(() => {
+    //         toast({
+    //             className: "bg-green-500 text-white dark:bg-green-500 dark:text-white",
+    //             title: " Hurrah! ",
+    //             description: " You are Registered For Chatting!!! Let's Chat ",
+    //             duration: 5000,
+    //         });
+    //         router.push(`/chat/${chatId}`);
+    //     }).catch((error) => {
+    //         console.log(error);
+    //         toast({
+    //             className: "bg-red-500 text-white dark:bg-red-500 dark:text-white",
+    //             title: " Oops! ",
+    //             description: " Something Went Wrong!!! ",
+    //             duration: 5000,
+    //         });
+    //     }).finally(() => {
+    //         setLoading(false);
+    //     });
+
+    //     // router.push(`/chat/${chatId}`);
+    //     // check if user is pro or limited
+    // };
 
     const createNewChat = async () => {
         setLoading(true);
-        if (session?.user?.id) return;
+        if (!session.user.id) {
+            toast({
+                className: "bg-red-500 text-white dark:bg-red-500 dark:text-white",
+                title: " Oops! ",
+                description: " User ID not found. Something Went Wrong!!! ",
+                duration: 5000,
+            });
+            setLoading(false);
+            return;
+        }
+
+        const chatId = uuidv4();
 
         toast({
             title: " Hurrah! ",
@@ -33,50 +87,40 @@ const CreateChatButton = () => {
             duration: 5000,
         });
 
-        const chatId = uuidv4();
-        await setDoc(addChatRef(chatId, session.user.id), {
-            userId: session.user.id,
-            email: session.user.email,
-            timeStamp: serverTimestamp(),
-            isAdmin: true,
-            chatId: chatId,
-            image: session.user.image || "",
-        }).then(() => {
+        console.log(toast, "toast")
+
+        try {
+            await setDoc(addChatRef(chatId, session.user.id), {
+                userId: session.user.id,
+                email: session.user.email,
+                timeStamp: serverTimestamp(),
+                isAdmin: true,
+                chatId: chatId,
+                image: session.user.image || "",
+            });
+
             toast({
-                className: "bg-green-500 text-white",
+                className: "bg-green-500 text-white dark:bg-green-500 dark:text-white",
                 title: " Hurrah! ",
                 description: " You are Registered For Chatting!!! Let's Chat ",
                 duration: 5000,
             });
-        }).catch((err) => {
+
+            router.push(`/chat/${chatId}`);
+        } catch (error) {
+            console.log(error);
+
             toast({
-                className: "bg-red-500 text-white",
+                className: "bg-red-500 text-white dark:bg-red-500 dark:text-white",
                 title: " Oops! ",
                 description: " Something Went Wrong!!! ",
                 duration: 5000,
             });
-        }).finally(() => {
+        } finally {
             setLoading(false);
-        });
-
-        router.push(`/chat/${session?.user?.id}`);
-
-        // check if user is pro or limited
+        }
     };
 
-    if ('isLarge')
-        return (
-            <div>
-                <Button
-                    size={"icon"}
-                    className="my-1 mx-2"
-                    id="icon"
-                    onClick={createNewChat}
-                >
-                    <MdOutlineChat className="text-4xl p-2" />
-                </Button>
-            </div>
-        );
 
     return (
         <div>
