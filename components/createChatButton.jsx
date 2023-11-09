@@ -16,9 +16,9 @@ import { addChatRef } from "@/lib/coverter/ChatMember";
 const CreateChatButton = () => {
     //   const useSubscription = useSubscriptionStore((state) => state.useSubscription);
     // console.log(session?.user?.id)
+
     const router = useRouter();
     const { data: session } = useSession();
-    // console.log(session.user.id, "session")
     const [loading, setLoading] = useState(true);
     const { toast } = useToast();
     const chatId = uuidv4();
@@ -78,16 +78,6 @@ const CreateChatButton = () => {
             setLoading(false);
             return;
         }
-
-        const chatId = uuidv4();
-
-        // toast({
-        //     title: " Hurrah! ",
-        //     description: " You are Registered For Chatting!!! Let's Chat ",
-        //     duration: 5000,
-        // });
-
-        console.log(toast, "toast")
 
         try {
             await setDoc(addChatRef(chatId, session.user.id), {

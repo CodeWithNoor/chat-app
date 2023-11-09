@@ -17,6 +17,7 @@ import "./styling/header.css";
 import Image from "next/image";
 import { Session } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
+import OnlineStatus from "./OnlineStatus";
 
 function UserProfile({
   name,
@@ -71,6 +72,14 @@ function UserProfile({
                 <User className="mr-2 h-4 w-4" />
                 {/* <span>Profile</span> */}
                 <span>{session?.user?.name}</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                id="profile-link"
+                className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
+              >
+                <User className="mr-2 h-4 w-4" />
+                <span>Profile</span>
+                {/* <OnlineStatus userId={session?.user?.id} /> */}
               </DropdownMenuItem>
               <DropdownMenuItem
                 id="profile-link"

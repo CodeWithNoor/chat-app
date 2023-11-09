@@ -13,6 +13,7 @@ import "./styling/header.css";
 import { authOptions } from "@/auth";
 import CreateChatButton from "./createChatButton";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import OnlineStatus from "./OnlineStatus";
 
 const nunito = Nunito({
   weight: "800",
@@ -61,7 +62,7 @@ const Header = async () => {
 
             {/* session if user logged in or not */}
             {session ? (
-                <CreateChatButton />
+              <CreateChatButton />
             ) : (
               <Link href={"/pricing"} prefetch={false}>
                 <Button size={"icon"} className="my-1 mx-2" id="icon">
