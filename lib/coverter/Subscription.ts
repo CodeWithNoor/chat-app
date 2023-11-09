@@ -17,7 +17,7 @@ const SubscriptionConverter: FirestoreDataConverter<Subscription> = {
     const data = snapshot.data(options);
 
     const sub: Subscription = {
-      id: data.id,
+      id: snapshot.id,
       metadata: data.metadata,
       stripeLink: data.stripeLink,
       quantity: data.quantity,

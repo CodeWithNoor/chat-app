@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import LogoImg from "@/images/logo-svg.svg";
-import { MdOutlineChat, MdPaid } from "react-icons/md";
+// import { MdOutlineChat, MdPaid } from "react-icons/md";
 import { BsTranslate } from "react-icons/bs";
 import { Button } from "@/components/ui/button";
 import UserProfile from "./UserProfile";
@@ -11,7 +11,7 @@ import { Nunito } from "next/font/google";
 import { getServerSession } from "next-auth";
 import "./styling/header.css";
 import { authOptions } from "@/auth";
-import CreateChatButton from "./CreateChatButton";
+import CreateChatButton from "./createChatButton";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
 const nunito = Nunito({
