@@ -17,7 +17,7 @@ export interface ChatMembers {
   timeStamp: string;
   isAdmin: boolean;
   chatId: string;
-  image: string;
+  image: string | null;
 }
 
 const ChatMemberConverter: FirestoreDataConverter<ChatMembers> = {
