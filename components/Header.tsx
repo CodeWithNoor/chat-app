@@ -11,6 +11,8 @@ import { Nunito } from "next/font/google";
 import { getServerSession } from "next-auth";
 import "./styling/header.css";
 import { authOptions } from "@/auth";
+import CreateChatButton from "./CreateChatButton";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
 const nunito = Nunito({
   weight: "800",
@@ -59,13 +61,11 @@ const Header = async () => {
 
             {/* session if user logged in or not */}
             {session ? (
-              <Button size={"icon"} className="my-1 mx-2" id="icon">
-                <MdOutlineChat className="text-4xl p-2" />
-              </Button>
+                <CreateChatButton />
             ) : (
               <Link href={"/pricing"} prefetch={false}>
                 <Button size={"icon"} className="my-1 mx-2" id="icon">
-                  <MdPaid className="text-4xl p-2" />
+                  <AccountCircleOutlinedIcon className="text-4xl p-2" />
                 </Button>
               </Link>
             )}

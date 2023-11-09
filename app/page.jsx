@@ -1,13 +1,14 @@
-import Image from "next/image";
+// import Image from "next/image";
 // import homeBg from "../images/home-bg.avif";
 import { Nunito } from "next/font/google";
 import PaidIcon from "@mui/icons-material/Paid";
 import { Button } from "@/components/ui/button";
-import ChatImag from "@/images/chat.webp";
+// import ChatImag from "@/images/chat.webp";
 import Link from "next/link";
 // import "./globals.css";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
+// import Chat from "@/app/chat/page";
 
 const nunito = Nunito({
   weight: "800",
@@ -54,14 +55,15 @@ export default async function Home() {
             </div>
             <div className="mt-16 flow-root sm:mt-24">
               <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-bg-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-                <Image
+                {/* <Chat /> */}
+                {/* <Image
                   unoptimized
                   src={ChatImag}
                   alt="home-bg"
                   width={2432}
                   height={1442}
                   className="rounded-md shadow-2xl ring-1 ring-bg-gray-900/10"
-                />
+                /> */}
               </div>
             </div>
           </div>

@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import { ClientProvider } from "@/components/ClientProvider";
 import "./globals.css";
 import { Providers } from "@/app/redux/Providers";
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,6 +47,7 @@ export default function RootLayout({
               <Providers>{children}</Providers>
               {/* wrap in state management */}
             </ThemeProvider>
+            <Toaster />
           </body>
         </html>
       </ClientProvider>
