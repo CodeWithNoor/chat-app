@@ -7,5 +7,9 @@ type Props = {
   };
 };
 export default function Chat({ searchParams: { error } }: Props) {
-  return <ChatList />;
+  return (
+    <>
+      <ChatList />
+    </>
+  );
 }

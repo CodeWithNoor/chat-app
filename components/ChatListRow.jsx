@@ -1,9 +1,13 @@
 import React from 'react'
+import { Skeleton } from "@/components/ui/skeleton"
 
-const ChatListRow = ({chatId}) => {
+const ChatListRow = ({ chatId }) => {
   console.log(chatId, "chatId")
+
   return (
-    <div>ChatListRow</div>
+    <>
+    <h1>{chatId}</h1>
+    </>
   )
 }
 

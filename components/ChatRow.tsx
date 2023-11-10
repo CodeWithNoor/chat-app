@@ -17,7 +17,7 @@ const nunito = Nunito({
 });
 
 const ChatRow = ({ initialChats }: { initialChats: ChatMembers[] }) => {
-  console.log(initialChats, "initial chats in chat row");
+  //   console.log(initialChats, "initial chats in chat row");
 
   const { data: session } = useSession();
 
@@ -40,11 +40,13 @@ const ChatRow = ({ initialChats }: { initialChats: ChatMembers[] }) => {
         </h1>
       </div>
     );
+  } else {
+    error && console.log(error, "Chat Members Collect Data Error");
   }
 
   return (
     <>
-      <div className="">
+      <div className="chat-row">
         {members?.map((members) => (
           <ChatListRow key={members.chatId} chatId={members.chatId} />
         ))}
