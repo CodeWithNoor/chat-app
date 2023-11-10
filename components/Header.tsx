@@ -13,7 +13,6 @@ import "./styling/header.css";
 import { authOptions } from "@/auth";
 import CreateChatButton from "./createChatButton";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import OnlineStatus from "./OnlineStatus";
 
 const nunito = Nunito({
   weight: "800",
@@ -21,11 +20,12 @@ const nunito = Nunito({
   display: "swap",
 });
 
-const Header = async () => {
+const Header = async ({}) => {
   const session = await getServerSession(authOptions);
 
   return (
     <>
+      {/***************** header ************************/}
       <header
         id="header"
         className="sticky top-0 z-50 bg-[#fff] dark:bg-[#020817] border-b-2 border-[#88888821] dark:border-sky-500"

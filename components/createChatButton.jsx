@@ -68,7 +68,7 @@ const CreateChatButton = () => {
 
     const createNewChat = async () => {
         setLoading(true);
-        if (!session.user.id) {
+        if (!session?.user?.id) {
             toast({
                 className: "bg-red-500 text-white dark:bg-red-500 dark:text-white",
                 title: " Oops! ",

@@ -1,9 +1,22 @@
-import React from 'react'
+"use client";
+import React, { useState, useEffect } from "react";
+// import { RiRadioButtonLine } from "react-icons/ri";
 import { Skeleton } from "@/components/ui/skeleton"
 
 const page = (props) => {
-  const id = props.params.chatId
+  const id = props.params.chatId;
   console.log(id)
+
+  // const [online, setOnline] = useState(false);
+
+  // useEffect(() => {
+  //   if (chatId) {
+  //     setOnline(true);
+  //   } else {
+  //     setOnline(false);
+  //   }
+  // }, [chatId]);
+  
   return (
     <>
       <div className=" h-screen bg-white dark:bg-[#020817] p-24">
@@ -17,3 +30,8 @@ const page = (props) => {
 }
 
 export default page
+
+
+
+
+
