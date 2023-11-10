@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/auth/[...nextauth]/route.js", "components/CheckoutButton.jsx", "auth.ts", "types/Subscription.ts", "components/LanguageTranslator.tsx", "lib/coverter/Subscription.ts", "i18n.js", "components/TranslatorProvider.js", "app/chat/page.tsx", "app/page.jsx", "components/CreateChatButton.jsx", "components/OnlineStatus.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/auth/[...nextauth]/route.js", "components/CheckoutButton.jsx", "auth.ts", "types/Subscription.ts", "components/LanguageTranslator.tsx", "lib/coverter/Subscription.ts", "i18n.js", "components/TranslatorProvider.js", "app/chat/page.tsx", "app/page.jsx", "components/CreateChatButton.jsx", "components/OnlineStatus.jsx", "components/ChatList.jsx"],
   "exclude": ["node_modules"]
 }

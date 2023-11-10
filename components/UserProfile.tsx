@@ -19,6 +19,7 @@ import { Session } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
 // import { RiRadioButtonLine } from "react-icons/ri";
 import OnlineStatus from "./OnlineStatus";
+import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 
 function UserProfile({
   name,
@@ -66,7 +67,6 @@ function UserProfile({
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-
               {/* get user name */}
               <DropdownMenuItem
                 id="profile-link"
@@ -83,6 +83,15 @@ function UserProfile({
                 className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
               >
                 <OnlineStatus userId={session?.user?.id} />
+              </DropdownMenuItem>
+
+              {/* manage billing */}
+              <DropdownMenuItem
+                id="profile-link"
+                className="hover:bg-gray-900 hover:dark:bg-[#ffffff44]"
+              >
+                <ManageAccountsIcon className="mr-2 h-4 w-4" />
+                <span>Manage Billing</span>
               </DropdownMenuItem>
 
               {/* add user signout functionality */}

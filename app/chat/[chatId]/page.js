@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 // import { RiRadioButtonLine } from "react-icons/ri";
 import { Skeleton } from "@/components/ui/skeleton"
 
@@ -16,7 +16,7 @@ const page = (props) => {
   //     setOnline(false);
   //   }
   // }, [chatId]);
-  
+
   return (
     <>
       <div className=" h-screen bg-white dark:bg-[#020817] p-24">

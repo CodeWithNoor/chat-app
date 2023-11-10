@@ -14,7 +14,7 @@ import { serverTimestamp, setDoc } from "firebase/firestore";
 import { addChatRef } from "@/lib/coverter/ChatMember";
 
 const CreateChatButton = () => {
-    //   const useSubscription = useSubscriptionStore((state) => state.useSubscription);
+    // const useSubscription = useSubscriptionStore((state) => state.useSubscription);
     // console.log(session?.user?.id)
 
     const router = useRouter();
@@ -32,7 +32,7 @@ const CreateChatButton = () => {
     //     toast({
     //         title: " Hurrah! ",
     //         description: " You are Registered For Chatting!!! Let's Chat ",
-    //         duration: 5000,
+    //         duration: 7000,
     //     });
 
     //     setDoc(addChatRef(chatId, session.user.id), {
@@ -47,7 +47,7 @@ const CreateChatButton = () => {
     //             className: "bg-green-500 text-white dark:bg-green-500 dark:text-white",
     //             title: " Hurrah! ",
     //             description: " You are Registered For Chatting!!! Let's Chat ",
-    //             duration: 5000,
+    //             duration: 7000,
     //         });
     //         router.push(`/chat/${chatId}`);
     //     }).catch((error) => {
@@ -56,7 +56,7 @@ const CreateChatButton = () => {
     //             className: "bg-red-500 text-white dark:bg-red-500 dark:text-white",
     //             title: " Oops! ",
     //             description: " Something Went Wrong!!! ",
-    //             duration: 5000,
+    //             duration: 7000,
     //         });
     //     }).finally(() => {
     //         setLoading(false);
@@ -73,7 +73,7 @@ const CreateChatButton = () => {
                 className: "bg-red-500 text-white dark:bg-red-500 dark:text-white",
                 title: " Oops! ",
                 description: " User ID not found. Something Went Wrong!!! ",
-                duration: 5000,
+                duration: 7000,
             });
             setLoading(false);
             return;
@@ -93,7 +93,7 @@ const CreateChatButton = () => {
                 className: "bg-green-500 text-white dark:bg-green-500 dark:text-white",
                 title: " Hurrah! ",
                 description: " You are Registered For Chatting!!! Let's Chat ",
-                duration: 5000,
+                duration: 7000,
             });
 
             router.push(`/chat/${chatId}`);
@@ -104,7 +104,7 @@ const CreateChatButton = () => {
                 className: "bg-red-500 text-white dark:bg-red-500 dark:text-white",
                 title: " Oops! ",
                 description: " Something Went Wrong!!! ",
-                duration: 5000,
+                duration: 7000,
             });
         } finally {
             setLoading(false);

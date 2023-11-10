@@ -7,9 +7,11 @@ import {
 import { Subscription } from "@/types/Subscription";
 
 const SubscriptionConverter: FirestoreDataConverter<Subscription> = {
+  // data push in firestore
   toFirestore(subscription: Subscription): DocumentData {
     return { ...subscription };
   },
+  // data pull in firestore
   fromFirestore(
     snapshot: QueryDocumentSnapshot,
     options: SnapshotOptions

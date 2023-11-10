@@ -21,6 +21,7 @@ export interface ChatMembers {
 }
 
 const ChatMemberConverter: FirestoreDataConverter<ChatMembers> = {
+  // data push in firestore
   toFirestore(member: ChatMembers): DocumentData {
     return {
       userId: member.userId,
@@ -31,6 +32,7 @@ const ChatMemberConverter: FirestoreDataConverter<ChatMembers> = {
       image: member.image,
     };
   },
+  // data pull in firestore
   fromFirestore(
     snapshot: QueryDocumentSnapshot,
     options: SnapshotOptions

@@ -18,7 +18,6 @@ const OnlineStatusUpdater = ({ userId }) => {
         };
 
         const unsubscribe = onAuthStateChanged(handleAuthStateChanged);
-
         return () => {
             unsubscribe();
         };
