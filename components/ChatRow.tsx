@@ -36,7 +36,7 @@ const ChatRow = ({ initialChats }: { initialChats: ChatMembers[] }) => {
           Welcome!
         </h1>
         <h1 className={`pb-10 ${nunito.className}`}>
-          Let's Get Started By Creating Your First Chat...!{" "}
+          Let's Get Started By Creating Your First Chat...!
         </h1>
       </div>
     );
