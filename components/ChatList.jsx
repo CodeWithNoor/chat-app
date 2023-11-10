@@ -1,8 +1,8 @@
 import React from "react";
 // import { Skeleton } from "@/components/ui/skeleton"
+// import { useSession } from "next-auth/react";
 import ChatRow from "./ChatRow";
 import { chatMembersCollectionGroupRef } from "@/lib/coverter/ChatMember";
-// import { useSession } from "next-auth/react";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
 import { getDocs } from "firebase/firestore";
@@ -16,15 +16,15 @@ const ChatList = async () => {
   )
 
   const initialChats = chatSnapshot.docs.map((doc) => ({
-    id: doc.id,
+    // id: doc.id,
     ...doc.data(),
+    timeStamp: null
   }));
-
   // console.log(initialChats, "initialChats");
 
   return (
     <>
-    <ChatRow initialChats={initialChats} />
+      <ChatRow initialChats={initialChats} />
     </>
   )
 };

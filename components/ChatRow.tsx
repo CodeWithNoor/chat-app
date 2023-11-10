@@ -1,36 +1,53 @@
 "use client";
 import React from "react";
-import { Skeleton } from "@/components/ui/skeleton";
+// import { Skeleton } from "@/components/ui/skeleton";
+// import Image from "next/image";
 import { useSession } from "next-auth/react";
-import Image from "next/image";
+import { ChatMembers } from "@/lib/coverter/ChatMember";
+import { useCollectionData } from "react-firebase-hooks/firestore";
+import { chatMembersCollectionGroupRef } from "@/lib/coverter/ChatMember";
+import { MdOutlineMessage } from "react-icons/md";
+import { Nunito } from "next/font/google";
+import ChatListRow from "./ChatListRow";
 
-const ChatRow = ({}) => {
+const nunito = Nunito({
+  weight: "800",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const ChatRow = ({ initialChats }: { initialChats: ChatMembers[] }) => {
+  console.log(initialChats, "initial chats in chat row");
+
   const { data: session } = useSession();
-  console.log(session, "user session");
+
+  const [members, loading, error] = useCollectionData<ChatMembers>(
+    session && chatMembersCollectionGroupRef(session?.user?.id),
+    {
+      initialValue: initialChats,
+    }
+  );
+
+  if (members?.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center pt-40 space-x-2">
+        <MdOutlineMessage className="h-10 w-10" />
+        <h1 className={`text-5xl font-extralight ${nunito.className}`}>
+          Welcome!
+        </h1>
+        <h1 className={`pb-10 ${nunito.className}`}>
+          Let's Get Started By Creating Your First Chat...!{" "}
+        </h1>
+      </div>
+    );
+  }
 
   return (
     <>
-      <div>ChatRow</div>
-      <div className="flex items-center space-x-4">
-        <Skeleton
-          className={`h-12 w-12 rounded-full bg-gray-500 dark:bg-gray-300`}
-        >
-          {session?.user?.image && (
-            <Image
-              src={`${session?.user?.image || ""}`}
-              alt={`${session?.user?.name || ""}`}
-              width={48}
-              height={48}
-              className="rounded-full"
-            />
-          )}
-        </Skeleton>
-        <div className="space-y-2">
-          <Skeleton className=" text-white dark:text-black h-4 w-[250px] bg-gray-500 dark:bg-gray-300">
-            {/* {session?.user?.name} */}
-          </Skeleton>
-          <Skeleton className="h-4 w-[200px] bg-gray-500 dark:bg-gray-300" />
-        </div>
+      <div className="">
+        {members?.map((members) => (
+          <ChatListRow key={members.chatId} chatId={members.chatId} />
+        ))}
       </div>
     </>
   );
