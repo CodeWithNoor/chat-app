@@ -9,6 +9,7 @@ import {
   query,
   limit,
   orderBy,
+  collection
 } from "firebase/firestore";
 
 export interface User {
